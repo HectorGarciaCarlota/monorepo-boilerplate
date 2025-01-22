@@ -1,14 +1,26 @@
-"use client";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
 
-import { Button } from "@repo/ui";
+import '../styles/global.css';
 
-import styles from "../styles/index.module.css";
 
 export default function Web() {
   return (
-    <div className={styles.container}>
+    <div>
       <h1>Web</h1>
-      <Button onClick={() => console.log("Pressed!")} text="Boop" />
+        <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+            </AccordionItem>
+        </Accordion>
+
     </div>
   );
 }
